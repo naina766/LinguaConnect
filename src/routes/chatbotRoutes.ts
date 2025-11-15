@@ -1,9 +1,9 @@
 import express from "express";
 import { generateReply } from "../services/chatbotService";
 import { sendResponse } from "../utils/responseHandler";
-
+import { authMiddleware } from "../middleware/authMiddleware";
 const router = express.Router();
-
+router.use(authMiddleware)
 router.post("/reply", async (req, res) => {
   try {
     const { question } = req.body;
