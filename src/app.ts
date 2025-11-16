@@ -19,7 +19,7 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: allowedOrigins, // your frontend
-  methods: "GET,POST,PUT,DELETE",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],  
   credentials: true
 }));
 app.use(bodyParser.json({ limit: '10mb' }));
