@@ -12,12 +12,16 @@ import faqRoutes from './routes/faqRoutes'
 import chatBotRoutes from './routes/chatbotRoutes'
 const app = express();
 
+const allowedOrigins = [
+  "https://linguaconnectfrontend.vercel.app",
+  "http://localhost:3000"
+]
 
 app.use(cors({
-  origin: "http://localhost:300", // your frontend
+  origin: allowedOrigins, // your frontend
+  methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
-
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
