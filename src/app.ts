@@ -24,7 +24,7 @@ app.use(
   cors({
     origin:"https://linguaconnectfrontend.vercel.app",
     credentials:true
-  });
+  }));
 
 
 // Parsers
