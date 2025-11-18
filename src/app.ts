@@ -14,27 +14,17 @@ import cors from "cors";
 const app = express();
 
 // CORS CONFIG
-const allowedOrigins = [
-  "https://linguaconnectfrontend.vercel.app",
-  "http://localhost:5173",
-  "http://localhost:3000"
-];
+// const allowedOrigins = [
+//   "https://linguaconnectfrontend.vercel.app",
+//   "http://localhost:5173",
+//   "http://localhost:3000"
+// ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // mobile/postman
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+    origin:"https://linguaconnectfrontend.vercel.app",
+    credentials:true
+  });
 
 
 // Parsers
